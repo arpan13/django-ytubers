@@ -15,7 +15,14 @@ class TeamAdmin(admin.ModelAdmin):
     list_filter=('role',)
     
     
+    
+class SlideAdmin(admin.ModelAdmin):
+    
+    def myphoto(self,object):
+        return format_html('<img width="40"  src="{}"/>'.format(object.photo.url))
+    
+    list_display=('headline','myphoto','button_text')
 
 
-admin.site.register(Slider)
+admin.site.register(Slider,SlideAdmin)
 admin.site.register(Team,TeamAdmin)
