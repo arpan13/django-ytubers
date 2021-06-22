@@ -23,6 +23,8 @@ urlpatterns = [
     path('',include('webpages.urls')),
     path('youtubers/',include('youtubers.urls')),
     path('hiretubers/',include('hiretubers.urls')),
+    path('socialhandle/',include('socialhandle.urls')),
+    path('aboutus/',include('aboutus.urls')),
     path('contacttuber/',include('contacttuber.urls')),
     path('accounts/',include('accounts.urls')),
     path('socialaccounts/', include('allauth.urls')),

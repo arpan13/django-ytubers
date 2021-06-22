@@ -33,6 +33,8 @@ LOGIN_REDIRECT_URL = 'dashboard'
 # Application definition
 
 INSTALLED_APPS = [
+    'aboutus.apps.AboutusConfig',
+    'socialhandle.apps.SocialhandleConfig',
     'contacttuber.apps.ContacttuberConfig',
     'hiretubers.apps.HiretubersConfig',
     'accounts.apps.AccountsConfig',
@@ -77,6 +79,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'aboutus.context_processors.about_us',
+                'socialhandle.context_processors.social_context',
             ],
         },
     },

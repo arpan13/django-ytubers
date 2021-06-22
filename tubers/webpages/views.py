@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Slider,Team
 from youtubers.models import Youtuber
+from socialhandle.models import SocialHandle
+
 # Create your views here.
 
 def home(request):
@@ -12,20 +14,29 @@ def home(request):
         'sliders':sliders,
         'teams':teams,
         'featured_youtubers':featured_youtubers,
-        "youtubers":youtubers,
-    }
+        "youtubers":youtubers, 
+        
+        }
     return render(request,'webpages/home.html',data)
 
 def about(request):
     teams = Team.objects.all()
+   
+    
     data={
         "teams":teams,
+        
+        
     }
     
     return render(request,'webpages/about.html',data)
 
 def services(request):
+   
+   
     return render(request,'webpages/services.html')
 
 def contact(request):
+   
+   
     return render(request,'webpages/contact.html')
